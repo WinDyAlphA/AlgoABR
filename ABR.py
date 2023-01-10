@@ -20,6 +20,24 @@ class ABR:
         else:
             self.val = val
 
+    def est_feuille(self):
+        if self.left == None and self.right == None:
+            return True
+        else:
+            return False
+
+    def est_pere(self):
+        if self.left != None or self.right != None:
+            return True
+        else:
+            return False
+    
+    def est_racine(self):
+        if self.left == None and self.right == None:
+            return True
+        else:
+            return False
+    
 
 # arbre = ABR(12)
 # arbre.insert(6)
