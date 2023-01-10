@@ -1,6 +1,13 @@
 import csv
 from ABR import *
 
+arbre = ABR(12)
+arbre.insert(6)
+arbre.insert(14)
+arbre.insert(3)
+
+print(arbre.left.val)
+print(arbre.right.val)
 
 liste = []
 
@@ -12,5 +19,9 @@ with open('ABRcsv.csv', 'r') as csv_file:
         for number in row:
             liste.append(number)
 
-for element in liste:
-    arbre.insert(element)
+
+for idx, element in enumerate(liste):
+    if idx == 0:
+        arbre = ABR(element)
+    else:
+        arbre.insert(element)
