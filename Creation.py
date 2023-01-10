@@ -1,21 +1,16 @@
 import csv
-from ABR import * 
-
-arbre = ABR(12)
-arbre.insert(6)
-arbre.insert(14)
-arbre.insert(3)
-
-print(arbre.left.val)
-print(arbre.right.val)
+from ABR import *
 
 
+liste = []
 
-    # Ouverture du fichier csv
-with open('nom_fichier.csv', 'r') as csv_file:
+# Ouverture du fichier csv
+with open('ABRcsv.csv', 'r') as csv_file:
     csv_reader = csv.reader(csv_file)
-
     # Lecture des nombres
     for row in csv_reader:
         for number in row:
-            print(number)
+            liste.append(number)
+
+for element in liste:
+    arbre.insert(element)
