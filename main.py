@@ -2,10 +2,28 @@ from Creation import *
 from ABR import *
 from suppression import *
 from exploration import *
-from visualisation import visualize
+from visualisation import *
 import matplotlib.pyplot as plt
 import numpy as np
 import customtkinter as ctk
+
+def mainRechercheViz(arbre,val):
+    val = int(val)
+    if (recherche(arbre,val)):
+        visualize_with_red_one(arbre,val)
+    else:
+        ctk.set_appearance_mode("dark") 
+        ctk.set_default_color_theme("dark-blue")
+
+        root = ctk.CTk()
+        root.geometry("500x100")
+        root.title("Error")
+
+        frame = ctk.CTkFrame(master=root)
+        frame.pack(pady=20, padx=60, fill="both", expand=True)
+        label = ctk.CTkLabel(master=frame, text="erreur : le nombre n'est pas dans l'arbre")
+        label.pack(pady=12, padx=10)
+        root.mainloop()
 
 def mainRecherche(arbre,val):
     val = int(val)
@@ -87,6 +105,8 @@ def mainRechercher():
     entry.pack(pady=12, padx=10)
     btn4 = ctk.CTkButton(master=frame, text="rechercher", command=lambda:mainRecherche(arbre,entry.get()))
     btn4.pack(pady=12, padx=10)
+    btn5 = ctk.CTkButton(master=frame, text="visualiser", command=lambda:mainRechercheViz(arbre,entry.get()))
+    btn5.pack(pady=12, padx=10)
     root.mainloop()
     
 
