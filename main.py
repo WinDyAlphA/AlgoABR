@@ -26,7 +26,7 @@ def mainSuppr(val):
         frame1 = ctk.CTkFrame(master=frame,
                                width=50,
                                height=50,
-                               corner_radius=10,
+                               corner_radius=50,
                                fg_color="green")
         delete_val(arbre,val)
         
@@ -35,7 +35,7 @@ def mainSuppr(val):
         frame1 = ctk.CTkFrame(master=frame,
                                width=50,
                                height=50,
-                               corner_radius=10,
+                               corner_radius=50,
                                fg_color="red")
     label.pack(pady=12, padx=10)
     frame1.pack(pady=12, padx=10)
@@ -92,7 +92,7 @@ def mainRecherche(arbre,val):
         frame1 = ctk.CTkFrame(master=frame,
                                width=50,
                                height=50,
-                               corner_radius=10,
+                               corner_radius=50,
                                fg_color="green")
         
     else:
@@ -100,7 +100,7 @@ def mainRecherche(arbre,val):
         frame1 = ctk.CTkFrame(master=frame,
                                width=50,
                                height=50,
-                               corner_radius=10,
+                               corner_radius=50,
                                fg_color="red")
     label.pack(pady=12, padx=10)
     frame1.pack(pady=12, padx=10)
@@ -125,20 +125,6 @@ def mainListe():
     label.pack(pady=12, padx=10)
     root.mainloop()
 
-def triFixe():
-    print(parcours_infixe_liste_itératif(arbre))
-    ctk.set_appearance_mode("dark") 
-    ctk.set_default_color_theme("dark-blue")
-
-    root = ctk.CTk()
-    root.geometry("500x100")
-    root.title("Trier")
-
-    frame = ctk.CTkFrame(master=root)
-    frame.pack(pady=20, padx=60, fill="both", expand=True)
-    label = ctk.CTkLabel(master=frame, text=parcours_infixe_liste_itératif(arbre))
-    label.pack(pady=12, padx=10)
-    root.mainloop()
 
 def visualisationTri():
     visualize_with_animation_parcours(arbre)
@@ -153,8 +139,8 @@ def mainTrier():
 
     frame = ctk.CTkFrame(master=root)
     frame.pack(pady=20, padx=60, fill="both", expand=True)
-    btn4 = ctk.CTkButton(master=frame, text="afficher la liste", command=triFixe)
-    btn4.pack(pady=12, padx=10)
+    label = ctk.CTkLabel(master=frame, text=parcours_infixe_liste_itératif(arbre))
+    label.pack(pady=12, padx=10)
     btn5 = ctk.CTkButton(master=frame, text="visualiser", command=visualisationTri)
     btn5.pack(pady=12, padx=10)
     root.mainloop()
@@ -179,7 +165,7 @@ def mainRechercher():
     btn5 = ctk.CTkButton(master=frame, text="visualiser", command=lambda:mainRechercheViz(arbre,entry.get()))
     btn5.pack(pady=12, padx=10)
     root.mainloop()
-    
+
 
 def app():
     ctk.set_appearance_mode("dark") 
@@ -209,6 +195,7 @@ def app():
 
     btn4 = ctk.CTkButton(master=frame, text="Supprimer", command=mainSupprimer)
     btn4.place(x=175, y=200)
+
 
 
 
