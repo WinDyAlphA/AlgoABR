@@ -75,7 +75,7 @@ def mainListe():
     label.pack(pady=12, padx=10)
     root.mainloop()
 
-def mainTrier():
+def triFixe():
     print(parcours_infixe_liste_itératif(arbre))
     ctk.set_appearance_mode("dark") 
     ctk.set_default_color_theme("dark-blue")
@@ -89,6 +89,27 @@ def mainTrier():
     label = ctk.CTkLabel(master=frame, text=parcours_infixe_liste_itératif(arbre))
     label.pack(pady=12, padx=10)
     root.mainloop()
+
+def visualisationTri():
+    visualize_with_animation_parcours(arbre)
+
+def mainTrier():
+    ctk.set_appearance_mode("dark") 
+    ctk.set_default_color_theme("dark-blue")
+
+    root = ctk.CTk()
+    root.geometry("500x200")
+    root.title("Trier")
+
+    frame = ctk.CTkFrame(master=root)
+    frame.pack(pady=20, padx=60, fill="both", expand=True)
+    btn4 = ctk.CTkButton(master=frame, text="afficher la liste", command=triFixe)
+    btn4.pack(pady=12, padx=10)
+    btn5 = ctk.CTkButton(master=frame, text="visualiser", command=visualisationTri)
+    btn5.pack(pady=12, padx=10)
+    root.mainloop()
+
+    
     
 def mainRechercher():
     print(parcours_infixe_liste_itératif(arbre))
