@@ -11,8 +11,11 @@ if __name__ == "__main__":
     delete_val(arbre, 17)
     parcours_infixe(arbre)
     visualize(arbre)
-    print(arbre.val)
+    print(parcours_infixe(arbre))
     print(arbre.left.val)
+
+
+
     
     
     
