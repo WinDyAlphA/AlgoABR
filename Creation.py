@@ -22,7 +22,7 @@ def create():
 
     for idx, element in enumerate(liste):
         if idx == 0:
-            arbre = ABR(element)
+            arbre = ABR(int(element))
         else:
-            arbre.insert(element)
+            arbre.insert(int(element))
     return arbre
