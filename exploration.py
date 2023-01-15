@@ -38,7 +38,9 @@ def parcours_infixe(ABR):
         parcours_infixe(ABR.right)
 
 def parcours_infixe_liste(ABR):
+    liste = []
     if ABR is not None:
         parcours_infixe_liste(ABR.left)
-        ABR.liste.append(ABR.val)
+        liste.append(ABR.val)
         parcours_infixe_liste(ABR.right)
+    return liste

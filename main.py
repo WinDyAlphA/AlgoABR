@@ -9,8 +9,11 @@ if __name__ == "__main__":
     arbre = create()
     parcours_infixe(arbre)
     visualize(arbre)
-    print(arbre.val)
+    print(parcours_infixe(arbre))
     print(arbre.left.val)
+
+
+
     
 
 
