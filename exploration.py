@@ -30,13 +30,6 @@ def recherchehauteur(self,val):
             return 0
     else:
         return False
-
-def Tri_bulle(tab):
-    for i in range(len(tab)):
-        for j in range(len(tab)-1):
-            if tab[j]>tab[j+1]:
-                tab[j],tab[j+1]=tab[j+1],tab[j]
-    return tab
         
 def Supprimer(ABR,val):
     if ABR.recherche(val):
