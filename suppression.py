@@ -20,3 +20,4 @@ def find_min(node):
     while current.left:
         current = current.left
     return current.val
+
