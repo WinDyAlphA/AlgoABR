@@ -4,6 +4,7 @@ class ABR:
         self.val = val
         self.left = None
         self.right = None
+        self.tri_bulle = []
 
     def insert(self, val):
         if self.val:
@@ -37,6 +38,16 @@ class ABR:
             return True
         else:
             return False
+
+    def tri_bulle(self, arbre):
+        liste = []
+        for i in arbre:
+            liste.append(i)
+        for i in range(len(liste)):
+            for j in range(len(liste)-1):
+                if liste[j]>liste[j+1]:
+                    liste[j],liste[j+1]=liste[j+1],liste[j]
+        self.tri_bulle = liste
     
 
 # arbre = ABR(12)
