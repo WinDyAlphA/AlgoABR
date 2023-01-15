@@ -7,7 +7,7 @@ class ABR:
 
     def insert(self, val):
         if self.val:
-            if val < self.val:
+            if val <= self.val:
                 if self.left is None:
                     self.left = ABR(val)
                 else:

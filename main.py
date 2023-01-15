@@ -3,6 +3,7 @@ from ABR import *
 from suppression import *
 from exploration import *
 from visualisation import *
+from generateur import *
 import matplotlib.pyplot as plt
 import numpy as np
 import customtkinter as ctk
@@ -165,12 +166,9 @@ def app():
 
 
 if __name__ == "__main__":
+    #csvwrite(generateur(10))
     arbre = create()
-    delete_val(arbre, 17)
-    parcours_infixe(arbre)
     # visualize(arbre)
-    print(parcours_infixe(arbre))
-    print(arbre.left.val)
     app()
 
 
