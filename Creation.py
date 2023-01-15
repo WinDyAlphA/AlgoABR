@@ -26,3 +26,13 @@ def create():
         else:
             arbre.insert(int(element))
     return arbre
+
+def csvread():
+    liste = []
+    with open('ABRcsv.csv', 'r') as csv_file:
+        csv_reader = csv.reader(csv_file)
+        # Lecture des nombres
+        for row in csv_reader:
+            for number in row:
+                liste.append(number)
+    return liste
