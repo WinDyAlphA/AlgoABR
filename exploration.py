@@ -30,11 +30,15 @@ def recherchehauteur(self,val):
             return 0
     else:
         return False
-        
-def Supprimer(ABR,val):
-    if ABR.recherche(val):
-        ABR.val=ABR.Tri_bulle(ABR)[1]
-        ABR.Tri_bulle(ABR).pop(0)
-        return ABR
-    else:
-        return False
+
+def parcours_infixe(ABR):
+    if ABR is not None:
+        parcours_infixe(ABR.left)
+        print(ABR.val)
+        parcours_infixe(ABR.right)
+
+def parcours_infixe_liste(ABR):
+    if ABR is not None:
+        parcours_infixe_liste(ABR.left)
+        ABR.liste.append(ABR.val)
+        parcours_infixe_liste(ABR.right)
