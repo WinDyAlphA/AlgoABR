@@ -33,7 +33,7 @@ def mainRecherche(arbre,val):
 
     root = ctk.CTk()
     root.geometry("500x200")
-    root.title("Liste")
+    root.title("Rechercher")
 
     frame = ctk.CTkFrame(master=root)
     frame.pack(pady=20, padx=60, fill="both", expand=True)
@@ -82,7 +82,7 @@ def mainTrier():
 
     root = ctk.CTk()
     root.geometry("500x100")
-    root.title("Liste")
+    root.title("Trier")
 
     frame = ctk.CTkFrame(master=root)
     frame.pack(pady=20, padx=60, fill="both", expand=True)
@@ -97,7 +97,7 @@ def mainRechercher():
 
     root = ctk.CTk()
     root.geometry("500x200")
-    root.title("Liste")
+    root.title("Rechercher")
 
     frame = ctk.CTkFrame(master=root)
     frame.pack(pady=20, padx=60, fill="both", expand=True)
@@ -125,16 +125,16 @@ def app():
     label.pack(pady=12, padx=10)
 
     btn = ctk.CTkButton(master=frame, text="voir la liste", command=mainListe)
-    btn.pack(pady=12, padx=10)
+    btn.place(x=100, y=50)
 
     btn2 = ctk.CTkButton(master=frame, text="trier la liste grace a l'arbre", command=mainTrier)
-    btn2.pack(pady=12, padx=10)
+    btn2.place(x=250, y=50)
 
     btn1 = ctk.CTkButton(master=frame, text="visualiser l'arbre", command=mainVisualisation)
-    btn1.pack(pady=12, padx=10)
+    btn1.place(x=175, y=100)
 
     btn3 = ctk.CTkButton(master=frame, text="rechercher", command=mainRechercher)
-    btn3.pack(pady=12, padx=10)
+    btn3.place(x=175, y=150)
 
 
 
