@@ -1,35 +1,10 @@
-def recherche(self, val):
-        if self.val:
-            if val < self.val:
-                if self.left is None:
-                    return False
-                else:
-                    return self.left.recherche(val)
-            elif val > self.val:
-                if self.right is None:
-                    return False
-                else:
-                    return self.right.recherche(val)
-            else:
-                return True
+def recherche(ABR, val):
+        if (val in parcours_infixe_liste_itératif(ABR)):
+            return True
         else:
             return False
-def recherchehauteur(self,val):
-    if self.val:
-        if val < self.val:
-            if self.left is None:
-                return False
-            else:
-                  return self.left.recherchehauteur(val)+1
-        elif val > self.val:
-            if self.right is None:
-                return False
-            else:
-                return self.right.recherchehauteur(val)+1
-        else:
-            return 0
-    else:
-        return False
+
+
 
 def parcours_infixe(ABR):
     if ABR is not None:
@@ -37,10 +12,16 @@ def parcours_infixe(ABR):
         print(ABR.val)
         parcours_infixe(ABR.right)
 
-def parcours_infixe_liste(ABR):
+def parcours_infixe_liste_itératif(ABR):
     liste = []
-    if ABR is not None:
-        parcours_infixe_liste(ABR.left)
+    pile = []
+    while ABR is not None or len(pile) != 0:
+        while ABR is not None:
+            pile.append(ABR)
+            ABR = ABR.left
+        ABR = pile.pop()
         liste.append(ABR.val)
-        parcours_infixe_liste(ABR.right)
+        ABR = ABR.right
     return liste
+    
+
