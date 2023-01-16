@@ -5,7 +5,11 @@ def recherche(ABR, val):
             return False
 
 
-
+def hauteur(ABR):
+    if ABR is None:
+        return -1
+    return 1 + max(hauteur(ABR.left), hauteur(ABR.right))
+    
 def parcours_infixe(ABR):
     if ABR is not None:
         parcours_infixe(ABR.left)

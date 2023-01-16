@@ -1,3 +1,5 @@
+from Creation import *
+
 class ABR:
     def __init__(self, val=None):
         self.val = val
@@ -75,6 +77,12 @@ class ABR:
             return True
         else:
             return False
+
+    def nb_feuilles(self):
+        if self.est_feuille():
+            return 1
+        else:
+            return self.left.nb_feuilles() + self.right.nb_feuilles()
 
     def est_pere(self):
         if self.left != None or self.right != None:

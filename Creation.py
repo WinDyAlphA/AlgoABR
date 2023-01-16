@@ -15,8 +15,14 @@ def csvread():
         # Lecture des nombres
         for row in csv_reader:
             for number in row:
-                liste.append(number)
+                try:
+                    liste.append(int(number))
+                except ValueError:
+                    print("Erreur : '{}' n'est pas un nombre valide.".format(number))
+                    return
     return liste
+
+    
 def create():
     liste = []
 
