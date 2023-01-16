@@ -1,3 +1,4 @@
 {
-  "ghcr.io/devcontainers/features/python:1": {}
+  "ghcr.io/devcontainers/features/python:1": {},
+  "postCreateCommand": "pip3 install --user -r requirements.txt",
 }
