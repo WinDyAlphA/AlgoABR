@@ -8,10 +8,10 @@ def visualize(self):
                 plt.scatter(x, y, s=1000, facecolors='none', edgecolors='b')
                 plt.text(x, y, str(node.val), ha='center', va='center', fontsize=15)
                 if node.left:
-                    plt.plot([x-spacing, x], [y-1, y], color='gray', linewidth=1.5)
+                    plt.plot([x-spacing, x], [y-1, y], color='red', linewidth=1.5)
                     dfs(node.left, x-spacing, y-1, spacing/2)
                 if node.right:
-                    plt.plot([x+spacing, x], [y-1, y], color='gray', linewidth=1.5)
+                    plt.plot([x+spacing, x], [y-1, y], color='green', linewidth=1.5)
                     dfs(node.right, x+spacing, y-1, spacing/2)
 
         plt.figure(figsize=(8, 6))
